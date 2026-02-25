@@ -1,9 +1,6 @@
 import xml.etree.ElementTree as ET
 
 
-# =========================
-# Clase Vuelo
-# =========================
 class Vuelo:
     def __init__(self, codigo, origen, destino, duracion, aerolinea):
         self.codigo = codigo
@@ -20,15 +17,7 @@ class Vuelo:
         print("Aerolínea:", self.aerolinea)
 
 
-# =========================
-# Diccionario global
-# =========================
-vuelos = {}
 
-
-# =========================
-# 1. Cargar archivo XML
-# =========================
 def cargar_archivo():
     ruta = input("Ingrese la ruta del archivo XML: ")
 
@@ -55,10 +44,6 @@ def cargar_archivo():
     except Exception as e:
         print("Error al leer el archivo:", e)
 
-
-# =========================
-# 2. Detalle vuelo específico
-# =========================
 def detalle_vuelo():
     codigo = input("Ingrese el código del vuelo: ")
 
@@ -68,9 +53,8 @@ def detalle_vuelo():
         print("Vuelo no encontrado.")
 
 
-# =========================
-# 3. Agrupar por aerolínea
-# =========================
+
+
 def agrupar_por_aerolinea():
     agrupados = {}
 
@@ -86,9 +70,7 @@ def agrupar_por_aerolinea():
             print("  -", codigo)
 
 
-# =========================
-# 4. Ordenar por duración
-# =========================
+
 def ordenar_por_duracion():
     lista_ordenada = sorted(vuelos.values(), key=lambda v: v.duracion, reverse=True)
 
@@ -97,9 +79,7 @@ def ordenar_por_duracion():
         print(vuelo.codigo, "-", vuelo.duracion, "horas")
 
 
-# =========================
-# Menú principal
-# =========================
+
 def menu():
     while True:
         print("\n===== MENÚ =====")
@@ -126,5 +106,6 @@ def menu():
             print("Opción inválida.")
 
 
-# Ejecutar programa
+
+
 menu()
